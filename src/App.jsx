@@ -3,11 +3,14 @@ import { useSelector } from "react-redux"
 import ColorInputs from "./components/inputs/ColorInputs"
 import AddRemoveColor from "./components/AddRemoveColor"
 import RangeAngle from "./components/inputs/RangeAngle"
+import SelectorColor from "./components/inputs/SelectorColor"
+import RangeColorPosition from "./components/inputs/RangeColorPosition"
+import OpenModalBtn from "./components/OpenModalBtn"
 
 function App() {
 
   const gradientValues = useSelector( state => state.gradient)
-
+  console.table(gradientValues)
   return (
     <div className="relative text-slate-100 max-w-4xl mx-auto mt-20 p-4 border border-slate-400 flex">
       <div className="w-1/2 p-4 pr-8">
@@ -26,15 +29,15 @@ function App() {
         </div>
 
         <p>Pick and change a color's position</p>
-        {/* {SelectorColor} */}
+        <SelectorColor />
 
         <p>Color's position</p>
-        {/* {RangeColor} */}
+        <RangeColorPosition />
 
         <p>Gradient global angle</p>
         <RangeAngle gradient={gradientValues}/>
 
-        {/* {OpenModalBtn} */}
+        <OpenModalBtn />
       </div>
       <Gradient gradient={gradientValues}/>
     </div>
