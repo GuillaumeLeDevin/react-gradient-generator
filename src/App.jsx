@@ -1,10 +1,11 @@
 import Gradient from "./components/Gradient"
 import { useSelector } from "react-redux"
+import ColorInputs from "./components/inputs/ColorInputs"
 
 function App() {
 
   const gradientValues = useSelector( state => state.gradient)
-  console.table(gradientValues)
+  console.log(gradientValues)
 
   return (
     <div className="relative text-slate-100 max-w-xl mx-auto mt-20 p-4 border border-slate-400 flex">
@@ -14,8 +15,9 @@ function App() {
 
         <p className="mb-1">Colors (min. 2 and max 5)</p>
         <div className="flex mb-2">
-          <input type="color" name="" id="" />
-          <input type="color" name="" id="" />
+          {gradientValues.colors.map(obj => (
+            <ColorInputs id={obj.id} key={obj.id} color={obj.value} />
+          ))}
         </div>
         <div className="mb-5">
           <button>-</button>
