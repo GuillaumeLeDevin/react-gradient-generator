@@ -5,7 +5,7 @@ import AddRemoveColor from "./components/AddRemoveColor"
 import RangeAngle from "./components/inputs/RangeAngle"
 import SelectorColor from "./components/inputs/SelectorColor"
 import RangeColorPosition from "./components/inputs/RangeColorPosition"
-import OpenModalBtn from "./components/OpenModalBtn"
+import OpenModalBtn from "./components/modal/OpenModalBtn"
 
 function App() {
 
@@ -40,6 +40,7 @@ function App() {
         <OpenModalBtn />
       </div>
       <Gradient gradient={gradientValues}/>
+        
     </div>
   );
 }
