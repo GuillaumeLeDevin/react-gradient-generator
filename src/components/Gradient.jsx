@@ -1,8 +1,11 @@
 import React from 'react'
+import getGradientCSSValues from "../components/utils/getGradientCSSValue"
 
-export default function Gradient({}) {
+export default function Gradient({gradient}) {
   return (
-    <div className="w-1/2 border-4 border-slate-200 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+    <div
+    style={{backgroundImage: `${getGradientCSSValues(gradient).slice(0, -1)}`}}
+    className="w-1/2 border-4 border-slate-200">
 
     </div>
   )

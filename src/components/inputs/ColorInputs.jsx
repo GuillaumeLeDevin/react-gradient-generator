@@ -6,7 +6,6 @@ export default function ColorInputs({id, color}) {
 
     const dispatch = useDispatch()
 
-
   return (
     <input
     onChange={e => dispatch(updateColorValue({id, value: e.target.value, type: "color"}))}
